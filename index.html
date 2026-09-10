@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FlashGuard - Flood Prediction System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🌊
+            </div>
+
+            <div>
+                <h1>Flash<span>Guard</span></h1>
+                <p>FLOOD PREDICTION SYSTEM</p>
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="#" class="active" data-page="dashboard">
+                Dashboard
+            </a>
+
+            <a href="#" data-page="map">
+                Live Map
+            </a>
+
+            <a href="#" data-page="analytics">
+                Analytics
+            </a>
+
+            <a href="#" data-page="sources">
+                Data Sources
+            </a>
+
+            <a href="#" data-page="alerts">
+                Alerts
+            </a>
+
+        </nav>
+
+
+        <div class="header-right">
+
+            <span class="live">
+                <span class="live-dot"></span>
+                LIVE
+            </span>
+
+            <button class="notification">
+                🔔
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section id="dashboard" class="page active-page">
+
+            <div class="welcome">
+
+                <div>
+
+                    <h2>Flash Flood Monitoring</h2>
+
+                    <p>
+                        Real-time prediction and risk monitoring
+                        for hilly regions.
+                    </p>
+
+                </div>
+
+
+                <div class="location">
+
+                    <span>📍 Monitoring Region</span>
+
+                    <select id="regionSelect">
+
+                        <option value="Chamoli">
+                            Chamoli
+                        </option>
+
+                        <option value="Kedarnath">
+                            Kedarnath
+                        </option>
+
+                        <option value="Manali">
+                            Manali
+                        </option>
+
+                        <option value="Sikkim">
+                            Sikkim
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STAT CARDS -->
+
+            <div class="stats">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>Rainfall</span>
+
+                        <div class="stat-icon">
+                            🌧️
+                        </div>
+
+                    </div>
+
+                    <h3 id="rainfall">
+                        82 <small>mm/hr</small>
+                    </h3>
+
+                    <p class="positive">
+                        ↑ Increasing
+                    </p>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>Water Level</span>
+
+                        <div class="stat-icon">
+                            🌊
+                        </div>
+
+                    </div>
+
+                    <h3 id="waterLevel">
+                        3.8 <small>m</small>
+                    </h3>
+
+                    <p class="positive">
+                        ↑ Rising
+                    </p>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>Soil Moisture</span>
+
+                        <div class="stat-icon">
+                            🌱
+                        </div>
+
+                    </div>
+
+                    <h3 id="soilMoisture">
+                        78 <small>%</small>
+                    </h3>
+
+                    <p class="normal">
+                        Normal
+                    </p>
+
+                </div>
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>Temperature</span>
+
+                        <div class="stat-icon">
+                            🌡️
+                        </div>
+
+                    </div>
+
+                    <h3 id="temperature">
+                        18 <small>°C</small>
+                    </h3>
+
+                    <p class="normal">
+                        Stable
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MAP + RISK -->
+
+            <div class="content-grid">
+
+
+                <!-- MAP -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <h3>🗺️ Regional Risk Map</h3>
+
+                        <span>LIVE MONITORING</span>
+
+                    </div>
+
+
+                    <div class="map" id="mapArea">
+
+                        <div class="map-grid"></div>
+
+                        <div class="mountain mountain-1"></div>
+
+                        <div class="mountain mountain-2"></div>
+
+                        <div class="mountain mountain-3"></div>
+
+                        <div class="mountain mountain-4"></div>
+
+                        <div class="river"></div>
+
+
+                        <div class="map-label label-1">
+                            Chamoli
+                        </div>
+
+                        <div class="map-label label-2">
+                            Kedarnath
+                        </div>
+
+                        <div class="map-label label-3">
+                            Sikkim
+                        </div>
+
+                        <div class="map-label label-4">
+                            Manali
+                        </div>
+
+
+                        <div class="risk-marker high marker-1"
+                             data-region="Chamoli"></div>
+
+                        <div class="risk-marker medium marker-2"
+                             data-region="Kedarnath"></div>
+
+                        <div class="risk-marker low marker-3"
+                             data-region="Manali"></div>
+
+                        <div class="risk-marker high marker-4"
+                             data-region="Sikkim"></div>
+
+
+                        <div class="map-legend">
+
+                            <span>🟢 Low</span>
+
+                            <span>🟡 Moderate</span>
+
+                            <span>🟠 High</span>
+
+                            <span>🔴 Critical</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RISK -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <h3>⚠️ Flood Risk Prediction</h3>
+
+                        <span>AI MODEL</span>
+
+                    </div>
+
+
+                    <div class="risk-box">
+
+                        <p>Current Flood Risk</p>
+
+                        <h2 id="riskScore">
+                            87<small>%</small>
+                        </h2>
+
+                        <div class="risk-bar">
+
+                            <div class="risk-progress"
+                                 id="riskProgress">
+                            </div>
+
+                        </div>
+
+                        <strong id="riskLevel">
+                            🟠 HIGH RISK
+                        </strong>
+
+                        <p id="prediction">
+                            Flash flood likely
+                        </p>
+
+                    </div>
+
+
+                    <div class="region-details">
+
+                        <div>
+                            <span>Rainfall</span>
+                            <strong>82 mm/hr</strong>
+                        </div>
+
+                        <div>
+                            <span>Water Level</span>
+                            <strong>3.8 m</strong>
+                        </div>
+                        <div>
+                            <span>Soil Moisture</span>
+                            <strong>78%</strong>
+                        </div>
+
+                        <div>
+                            <span>Slope</span>
+                            <strong>38°</strong>
+                        </div>
+
+                        <div>
+                            <span>Risk Window</span>
+                            <strong>2–4 Hours</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BOTTOM -->
+
+            <div class="bottom-grid">
+
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <h3>🛰️ Data Sources</h3>
+
+                        <span>4 SOURCES</span>
+
+                    </div>
+
+
+                    <div class="data-source">
+
+                        <div class="source-left">
+
+                            <div class="source-icon">
+                                🌧️
+                            </div>
+
+                            <div>
+
+                                <h4>Weather Data</h4>
+
+                                <p>
+                                    Rainfall & temperature
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <span class="connected">
+                            ● Connected
+                        </span>
+
+                    </div>
+
+
+                    <div class="data-source">
+
+                        <div class="source-left">
+
+                            <div class="source-icon">
+                                🛰️
+                            </div>
+
+                            <div>
+
+                                <h4>Satellite Data</h4>
+
+                                <p>
+                                    Terrain & land cover
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <span class="connected">
+                            ● Connected
+                        </span>
+
+                    </div>
+
+
+                    <div class="data-source">
+
+                        <div class="source-left">
+
+                            <div class="source-icon">
+                                📡
+                            </div>
+
+                            <div>
+
+                                <h4>IoT Sensors</h4>
+
+                                <p>
+                                    Water level sensors
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <span class="connected">
+                            ● Connected
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <h3>🚨 Recent Alerts</h3>
+
+                        <span>VIEW ALL</span>
+
+                    </div>
+
+
+                    <div class="alert">
+
+                        <h4>
+                            🔴 High Risk — Chamoli
+                        </h4>
+
+                        <p>
+                            Heavy rainfall detected.
+                            Flood probability increased.
+                        </p>
+
+                        <small>
+                            2 minutes ago
+                        </small>
+
+                    </div>
+
+
+                    <div class="alert high-alert">
+
+                        <h4>
+                            🟠 Rising Water Level
+                        </h4>
+
+                        <p>
+                            River level crossed warning threshold.
+                        </p>
+
+                        <small>
+                            12 minutes ago
+                        </small>
+
+                    </div>
+
+
+                    <div class="alert medium-alert">
+                                   <h4>
+                            🟡 Moderate Risk — Region D
+                        </h4>
+
+                        <p>
+                            Rainfall intensity increasing.
+                        </p>
+
+                        <small>
+                            28 minutes ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= LIVE MAP ================= -->
+
+        <section id="map" class="page">
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <h2>🗺️ Live Flood Risk Map</h2>
+
+                    <span>REAL-TIME MONITORING</span>
+
+                </div>
+
+
+                <div class="big-map">
+
+                    <div class="map-grid"></div>
+
+                    <div class="mountain mountain-1"></div>
+                    <div class="mountain mountain-2"></div>
+                    <div class="mountain mountain-3"></div>
+                    <div class="mountain mountain-4"></div>
+
+                    <div class="river"></div>
+
+
+                    <div class="map-label label-1">
+                        Chamoli
+                    </div>
+
+                    <div class="map-label label-2">
+                        Kedarnath
+                    </div>
+
+                    <div class="map-label label-3">
+                        Sikkim
+                    </div>
+
+                    <div class="map-label label-4">
+                        Manali
+                    </div>
+
+
+                    <div class="risk-marker high marker-1"
+                         data-region="Chamoli"></div>
+
+                    <div class="risk-marker medium marker-2"
+                         data-region="Kedarnath"></div>
+
+                    <div class="risk-marker low marker-3"
+                         data-region="Manali"></div>
+
+                    <div class="risk-marker high marker-4"
+                         data-region="Sikkim"></div>
+
+
+                    <div class="map-legend">
+
+                        <span>🟢 Low</span>
+                        <span>🟡 Moderate</span>
+                        <span>🟠 High</span>
+                        <span>🔴 Critical</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= ANALYTICS ================= -->
+
+        <section id="analytics" class="page">
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <h2>📊 Flood Risk Analytics</h2>
+
+                    <span>LAST 24 HOURS</span>
+
+                </div>
+
+
+                <div class="analytics-grid">
+
+
+                    <div class="chart-card">
+
+                        <h3>Rainfall Trend</h3>
+
+                        <div class="bars">
+
+                            <span style="height:30%"></span>
+                            <span style="height:45%"></span>
+                            <span style="height:40%"></span>
+                            <span style="height:60%"></span>
+                            <span style="height:75%"></span>
+                            <span style="height:90%"></span>
+                            <span style="height:82%"></span>
+
+                        </div>
+
+                        <p>
+                            Rainfall is increasing
+                        </p>
+
+                    </div>
+
+
+                    <div class="chart-card">
+
+                        <h3>Water Level Trend</h3>
+
+                        <div class="bars">
+
+                            <span style="height:25%"></span>
+                            <span style="height:35%"></span>
+                            <span style="height:45%"></span>
+                            <span style="height:55%"></span>
+                            <span style="height:65%"></span>
+                            <span style="height:80%"></span>
+                            <span style="height:88%"></span>
+
+                        </div>
+                        <p>
+                            Water level is rising
+                        </p>
+
+                    </div>
+
+
+                    <div class="chart-card">
+
+                        <h3>Flood Probability</h3>
+
+                        <div class="big-number">
+                            87%
+                        </div>
+
+                        <p>
+                            Current prediction
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= DATA SOURCES ================= -->
+
+        <section id="sources" class="page">
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <h2>🛰️ Multi-Source Data</h2>
+
+                    <span>SYSTEM STATUS</span>
+
+                </div>
+
+
+                <div class="source-large">
+
+                    <h3>🌧️ Weather Data</h3>
+
+                    <p>
+                        Rainfall, temperature,
+                        humidity and wind data.
+                    </p>
+
+                    <span class="connected">
+                        ● Connected
+                    </span>
+
+                </div>
+
+
+                <div class="source-large">
+
+                    <h3>🛰️ Satellite Data</h3>
+
+                    <p>
+                        Satellite imagery,
+                        terrain and land-cover information.
+                    </p>
+
+                    <span class="connected">
+                        ● Connected
+                    </span>
+
+                </div>
+
+
+                <div class="source-large">
+
+                    <h3>📡 IoT Sensor Data</h3>
+
+                    <p>
+                        River water level,
+                        soil moisture and sensor readings.
+                    </p>
+
+                    <span class="connected">
+                        ● Connected
+                    </span>
+
+                </div>
+
+
+                <div class="source-large">
+
+                    <h3>🏔️ Terrain / DEM Data</h3>
+
+                    <p>
+                        Elevation, slope,
+                        drainage and terrain information.
+                    </p>
+
+                    <span class="connected">
+                        ● Connected
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= ALERTS ================= -->
+
+        <section id="alerts" class="page">
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <h2>🚨 Alert Center</h2>
+
+                    <span>3 ACTIVE ALERTS</span>
+
+                </div>
+
+
+                <div class="alert alert-critical">
+
+                    <h3>
+                        🔴 HIGH RISK — CHAMOLI
+                    </h3>
+
+                    <p>
+                        Heavy rainfall detected.
+                        Flash flood probability is high.
+                    </p>
+
+                    <strong>
+                        Risk: 87%
+                    </strong>
+
+                    <small>
+                        2 minutes ago
+                    </small>
+
+                </div>
+
+
+                <div class="alert high-alert">
+
+                    <h3>
+                        🟠 WATER LEVEL RISING
+                    </h3>
+
+                    <p>
+                        River water level is approaching
+                        the warning threshold.
+                    </p>
+
+                    <strong>
+                        Level: 3.8 m
+                    </strong>
+
+                    <small>
+                        12 minutes ago
+                    </small>
+
+                </div>
+
+
+                <div class="alert medium-alert">
+
+                    <h3>
+                        🟡 MODERATE RISK — KEDARNATH
+                    </h3>
+
+                    <p>
+                        Rainfall intensity is increasing.
+                        Continuous monitoring required.
+                    </p>
+                    <strong>
+                        Risk: 64%
+                    </strong>
+
+                    <small>
+                        28 minutes ago
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
