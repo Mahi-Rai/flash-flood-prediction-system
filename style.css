@@ -10,7 +10,7 @@ body {
     color: white;
 }
 
-/* HEADER */
+
 
 header {
     height: 72px;
@@ -100,7 +100,7 @@ nav a.active {
     cursor: pointer;
 }
 
-/* MAIN */
+
 
 main {
     padding: 30px;
@@ -108,7 +108,7 @@ main {
     margin: auto;
 }
 
-/* WELCOME */
+
 
 .welcome {
     display: flex;
@@ -140,7 +140,7 @@ main {
     color: white;
 }
 
-/* STAT CARDS */
+
 
 .stats {
     display: grid;
@@ -204,7 +204,7 @@ main {
     color: #38bdf8;
 }
 
-/* CONTENT */
+
 
 .content-grid {
     display: grid;
@@ -236,7 +236,7 @@ main {
     font-size: 10px;
 }
 
-/* MAP */
+
 
 .map {
     height: 370px;
@@ -258,7 +258,7 @@ main {
     background-size: 45px 45px;
 }
 
-/* MOUNTAINS */
+
 
 .mountain {
     position: absolute;
@@ -291,7 +291,7 @@ main {
     transform: scale(1.2);
 }
 
-/* RIVER */
+
 
 .river {
     position: absolute;
@@ -309,7 +309,7 @@ main {
     opacity: 0.7;
 }
 
-/* MAP LABELS */
+
 
 .map-label {
     position: absolute;
@@ -344,7 +344,7 @@ main {
     top: 65%;
 }
 
-/* RISK MARKERS */
+
 
 .risk-marker {
     position: absolute;
@@ -399,7 +399,7 @@ main {
     top: 70%;
 }
 
-/* MAP LEGEND */
+
 
 .map-legend {
     position: absolute;
@@ -419,7 +419,7 @@ main {
     font-size: 10px;
 }
 
-/* RISK BOX */
+
 
 .risk-box {
     background: #24151a;
@@ -457,7 +457,7 @@ main {
     margin-top: 5px;
 }
 
-/* RISK BAR */
+
 
 .risk-bar {
     width: 100%;
@@ -476,7 +476,7 @@ main {
     background: #ef4444;
 }
 
-/* DETAILS */
+
 
 .region-details {
     display: flex;
@@ -496,7 +496,7 @@ main {
     color: white;
 }
 
-/* BOTTOM */
+
 
 .bottom-grid {
     display: grid;
@@ -504,7 +504,6 @@ main {
     gap: 20px;
 }
 
-/* DATA SOURCE */
 
 .data-source {
     display: flex;
@@ -554,7 +553,7 @@ main {
     font-size: 9px;
 }
 
-/* ALERT */
+
 
 .alert {
     padding: 14px;
@@ -594,7 +593,7 @@ main {
     border-left-color: #eab308;
 }
 
-/* RESPONSIVE */
+
 
 @media (max-width: 1000px) {
 
@@ -640,7 +639,6 @@ main {
         height: 300px;
     }
 }
-/* PAGE NAVIGATION */
 
 .page {
     display: none;
@@ -651,7 +649,6 @@ main {
 }
 
 
-/* REGION SELECT */
 
 .location {
     display: flex;
@@ -670,7 +667,6 @@ main {
 }
 
 
-/* BIG MAP */
 
 .big-map {
     height: 550px;
@@ -682,7 +678,6 @@ main {
 }
 
 
-/* ANALYTICS */
 
 .analytics-grid {
     display: grid;
@@ -728,7 +723,7 @@ main {
 }
 
 
-/* DATA SOURCES */
+
 
 .source-large {
     background: #091827;
@@ -749,7 +744,7 @@ main {
 }
 
 
-/* ALERT */
+
 
 .alert-critical {
     border-left: 4px solid #ef4444;
