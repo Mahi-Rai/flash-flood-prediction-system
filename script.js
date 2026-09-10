@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ==========================
-    // REGION DATA
-    // ==========================
+    
 
     const regions = {
 
@@ -53,9 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 
-    // ==========================
-    // PAGE NAVIGATION
-    // ==========================
+   
 
     const navLinks =
         document.querySelectorAll("nav a");
@@ -85,8 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
 
-            // Show selected page
-
             const selectedPage =
                 document.getElementById(pageName);
 
@@ -100,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            // Active navigation
+            
 
             navLinks.forEach(function (item) {
 
@@ -111,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.classList.add("active");
 
 
-            // Scroll to top
+           
 
             window.scrollTo({
                 top: 0,
@@ -124,9 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // ==========================
-    // REGION SELECT
-    // ==========================
 
     const regionSelect =
         document.getElementById(
@@ -254,9 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // ==========================
-    // NOTIFICATION
-    // ==========================
+   
 
     const notification =
         document.querySelector(
@@ -308,9 +297,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // ==========================
-    // MAP MARKERS
-    // ==========================
+    
 
     const markers =
         document.querySelectorAll(
@@ -341,7 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 updateRegion(region);
 
 
-                // Open map page
+                
 
                 pages.forEach(function (page) {
 
@@ -383,10 +370,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // ==========================
-    // INITIAL DATA
-    // ==========================
-
+    
     updateRegion("Chamoli");
 
 
